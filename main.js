@@ -3,6 +3,7 @@ let isDown = false;
 
 // to know where initial click is located
 let startX;
+
 let scrollLeft;
 
 slider.addEventListener("mousedown", event => {
