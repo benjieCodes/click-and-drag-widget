@@ -10,7 +10,6 @@ slider.addEventListener("mousedown", event => {
   slider.classList.add("active");
   startX = event.pageX - slider.offsetLeft; // finds the position of click
   scrollLeft = slider.scrollLeft;
-  console.log(startX);
 });
 slider.addEventListener("mouseleave", () => {
   isDown = false;
@@ -20,6 +19,9 @@ slider.addEventListener("mouseup", () => {
   isDown = false;
   slider.classList.remove("active");
 });
-slider.addEventListener("mousemove", () => {
+slider.addEventListener("mousemove", event => {
   if (!isDown) return; // stop function from running
+  event.preventDefault();
+  const x = event.pageX - slider.offsetLeft; // finds where the mouse position is moving
+  console.log({ x, startX });
 });
