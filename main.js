@@ -23,5 +23,6 @@ slider.addEventListener("mousemove", event => {
   if (!isDown) return; // stop function from running
   event.preventDefault();
   const x = event.pageX - slider.offsetLeft; // finds where the mouse position is moving
-  console.log({ x, startX });
+  const slide = x - startX;
+  slider.scrollLeft = scrollLeft - slide;
 });
